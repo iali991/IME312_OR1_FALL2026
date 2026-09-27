@@ -1,0 +1,33 @@
+{
+  "name": "Case - Unbounded Solution",
+  "description": "Summary flowchart branch: negative value in row 0 but no positive ratio -> the objective can grow without limit.",
+  "sense": "max",
+  "variables": [
+    "X1",
+    "X2"
+  ],
+  "objective": [
+    2,
+    1
+  ],
+  "constraints": [
+    {
+      "name": "C1",
+      "coefficients": [
+        1,
+        -1
+      ],
+      "type": "<=",
+      "rhs": 10
+    },
+    {
+      "name": "C2",
+      "coefficients": [
+        2,
+        0
+      ],
+      "type": "<=",
+      "rhs": 40
+    }
+  ]
+}

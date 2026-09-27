@@ -1,0 +1,63 @@
+{
+  "name": "Practice - Four-Ingredient Blending (Minimize Cost)",
+  "description": "Blend 100 kg of feed from four ingredients (X1..X4 kg) at minimum cost ($/kg 0.30, 0.25, 0.40, 0.20) meeting protein and fibre specs and an availability limit on ingredient 3. Four variables: no geometric plot, but every tableau chart still applies.",
+  "sense": "min",
+  "variables": [
+    "X1",
+    "X2",
+    "X3",
+    "X4"
+  ],
+  "objective": [
+    0.3,
+    0.25,
+    0.4,
+    0.2
+  ],
+  "constraints": [
+    {
+      "name": "Protein (kg)",
+      "coefficients": [
+        0.2,
+        0.3,
+        0.4,
+        0.1
+      ],
+      "type": ">=",
+      "rhs": 22
+    },
+    {
+      "name": "Fibre (kg)",
+      "coefficients": [
+        0.05,
+        0.1,
+        0.02,
+        0.15
+      ],
+      "type": "<=",
+      "rhs": 8
+    },
+    {
+      "name": "Total (kg)",
+      "coefficients": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "=",
+      "rhs": 100
+    },
+    {
+      "name": "X3 availability",
+      "coefficients": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "type": "<=",
+      "rhs": 30
+    }
+  ]
+}

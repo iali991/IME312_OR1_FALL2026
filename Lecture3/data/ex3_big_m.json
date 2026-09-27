@@ -1,0 +1,42 @@
+{
+  "name": "Lecture Example 3 - Big-M with an Artificial Variable",
+  "description": "Lecture slides 60-77. A >= constraint requires a surplus and an artificial variable penalised by -M in the objective.",
+  "sense": "max",
+  "variables": [
+    "X1",
+    "X2"
+  ],
+  "objective": [
+    4,
+    3
+  ],
+  "constraints": [
+    {
+      "name": "C1",
+      "coefficients": [
+        1,
+        2
+      ],
+      "type": "<=",
+      "rhs": 4
+    },
+    {
+      "name": "C2",
+      "coefficients": [
+        2,
+        1
+      ],
+      "type": ">=",
+      "rhs": 6
+    },
+    {
+      "name": "C3",
+      "coefficients": [
+        0,
+        1
+      ],
+      "type": "<=",
+      "rhs": 1
+    }
+  ]
+}

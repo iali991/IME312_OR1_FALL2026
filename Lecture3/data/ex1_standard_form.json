@@ -1,0 +1,37 @@
+{
+  "name": "Lecture Example 1 - Converting to Standard Form",
+  "description": "Lecture slides 11-14. Mixed >= / <= constraints; used to demonstrate slack, surplus and artificial variables. Solved here to completion as an extension (3 decision variables -> 3-D geometry).",
+  "sense": "max",
+  "variables": [
+    "X1",
+    "X2",
+    "X3"
+  ],
+  "objective": [
+    7,
+    -3,
+    5
+  ],
+  "constraints": [
+    {
+      "name": "C1",
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "type": ">=",
+      "rhs": 9
+    },
+    {
+      "name": "C2",
+      "coefficients": [
+        3,
+        2,
+        1
+      ],
+      "type": "<=",
+      "rhs": 12
+    }
+  ]
+}

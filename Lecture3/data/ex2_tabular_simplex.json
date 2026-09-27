@@ -1,0 +1,33 @@
+{
+  "name": "Lecture Example 2 - Tabular Simplex",
+  "description": "Lecture slides 15-57. All <= constraints, slack variables give the starting basis. Three iterations to the optimum Z = 70.",
+  "sense": "max",
+  "variables": [
+    "X1",
+    "X2"
+  ],
+  "objective": [
+    20,
+    10
+  ],
+  "constraints": [
+    {
+      "name": "C1",
+      "coefficients": [
+        1,
+        -1
+      ],
+      "type": "<=",
+      "rhs": 1
+    },
+    {
+      "name": "C2",
+      "coefficients": [
+        3,
+        1
+      ],
+      "type": "<=",
+      "rhs": 7
+    }
+  ]
+}

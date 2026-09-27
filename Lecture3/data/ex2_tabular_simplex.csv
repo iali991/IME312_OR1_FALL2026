@@ -1,0 +1,4 @@
+row,X1,X2,type,rhs
+objective,20,10,max,
+C1,1,-1,<=,1
+C2,3,1,<=,7

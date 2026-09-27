@@ -1,0 +1,33 @@
+{
+  "name": "Case - Infeasible Model",
+  "description": "Summary flowchart branch: row 0 has no negative values but an artificial variable remains in the basis at a positive level -> no feasible solution exists.",
+  "sense": "max",
+  "variables": [
+    "X1",
+    "X2"
+  ],
+  "objective": [
+    3,
+    2
+  ],
+  "constraints": [
+    {
+      "name": "C1",
+      "coefficients": [
+        2,
+        1
+      ],
+      "type": "<=",
+      "rhs": 2
+    },
+    {
+      "name": "C2",
+      "coefficients": [
+        3,
+        4
+      ],
+      "type": ">=",
+      "rhs": 12
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Practice - Three-Product Production Plan",
+  "description": "A workshop makes products A, B, C (X1, X2, X3 units/week). Profit per unit 30, 40, 35. Machining, assembly and material capacities are limited, and a contract requires at least 10 units of B.",
+  "sense": "max",
+  "variables": [
+    "X1",
+    "X2",
+    "X3"
+  ],
+  "objective": [
+    30,
+    40,
+    35
+  ],
+  "constraints": [
+    {
+      "name": "Machining (h)",
+      "coefficients": [
+        2,
+        3,
+        2
+      ],
+      "type": "<=",
+      "rhs": 120
+    },
+    {
+      "name": "Assembly (h)",
+      "coefficients": [
+        4,
+        2,
+        3
+      ],
+      "type": "<=",
+      "rhs": 160
+    },
+    {
+      "name": "Material (kg)",
+      "coefficients": [
+        3,
+        2,
+        4
+      ],
+      "type": "<=",
+      "rhs": 140
+    },
+    {
+      "name": "Contract B",
+      "coefficients": [
+        0,
+        1,
+        0
+      ],
+      "type": ">=",
+      "rhs": 10
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Case - Alternative Optimal Solutions",
+  "description": "Objective parallel to a binding constraint: at the optimum a non-basic variable has a zero coefficient in row 0, so another optimal vertex exists.",
+  "sense": "max",
+  "variables": [
+    "X1",
+    "X2"
+  ],
+  "objective": [
+    2,
+    4
+  ],
+  "constraints": [
+    {
+      "name": "C1",
+      "coefficients": [
+        1,
+        2
+      ],
+      "type": "<=",
+      "rhs": 5
+    },
+    {
+      "name": "C2",
+      "coefficients": [
+        1,
+        1
+      ],
+      "type": "<=",
+      "rhs": 4
+    }
+  ]
+}
