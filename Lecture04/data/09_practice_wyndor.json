@@ -1,0 +1,71 @@
+{
+  "name": "Practice: Wyndor Glass",
+  "source": "Practice problem (classic textbook example)",
+  "description": "Two new products (doors x1, windows x2) share capacity in three plants. Profit in $1000 per batch.",
+  "sense": "max",
+  "objective_name": "Profit ($1000)",
+  "objective": [
+    3,
+    5
+  ],
+  "variables": [
+    {
+      "name": "Doors",
+      "description": "batches of doors",
+      "sign": ">=0"
+    },
+    {
+      "name": "Windows",
+      "description": "batches of windows",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Plant1",
+      "coefficients": [
+        1,
+        0
+      ],
+      "sense": "<=",
+      "rhs": 4,
+      "description": "hours in plant 1"
+    },
+    {
+      "name": "Plant2",
+      "coefficients": [
+        0,
+        2
+      ],
+      "sense": "<=",
+      "rhs": 12,
+      "description": "hours in plant 2"
+    },
+    {
+      "name": "Plant3",
+      "coefficients": [
+        3,
+        2
+      ],
+      "sense": "<=",
+      "rhs": 18,
+      "description": "hours in plant 3"
+    }
+  ],
+  "scenarios": {
+    "ofc": [
+      {
+        "variable": "Doors",
+        "value": 8,
+        "note": "door profit rises to 8"
+      }
+    ],
+    "rhs": [
+      {
+        "constraint": "Plant2",
+        "value": 18,
+        "note": "plant 2 capacity rises to 18"
+      }
+    ]
+  }
+}

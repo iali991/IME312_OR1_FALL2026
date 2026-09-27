@@ -1,0 +1,98 @@
+{
+  "name": "Dakota Furniture",
+  "source": "Lecture slides 26-38 (dual of a max problem)",
+  "description": "Dakota manufactures desks, tables and chairs using lumber, finishing hours and carpentry hours. Resources are already purchased, so Dakota maximizes total revenue.",
+  "sense": "max",
+  "objective_name": "Revenue ($)",
+  "objective": [
+    60,
+    30,
+    20
+  ],
+  "variables": [
+    {
+      "name": "Desks",
+      "description": "number of desks produced",
+      "sign": ">=0"
+    },
+    {
+      "name": "Tables",
+      "description": "number of tables produced",
+      "sign": ">=0"
+    },
+    {
+      "name": "Chairs",
+      "description": "number of chairs produced",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Lumber",
+      "coefficients": [
+        8,
+        6,
+        1
+      ],
+      "sense": "<=",
+      "rhs": 48,
+      "description": "board feet of lumber"
+    },
+    {
+      "name": "Finishing",
+      "coefficients": [
+        4,
+        2,
+        1.5
+      ],
+      "sense": "<=",
+      "rhs": 20,
+      "description": "finishing hours"
+    },
+    {
+      "name": "Carpentry",
+      "coefficients": [
+        2,
+        1.5,
+        0.5
+      ],
+      "sense": "<=",
+      "rhs": 8,
+      "description": "carpentry hours"
+    }
+  ],
+  "scenarios": {
+    "ofc": [
+      {
+        "variable": "Tables",
+        "value": 40,
+        "note": "what price makes tables worth producing?"
+      }
+    ],
+    "rhs": [
+      {
+        "constraint": "Finishing",
+        "value": 22,
+        "note": "two extra finishing hours"
+      },
+      {
+        "constraint": "Lumber",
+        "value": 40,
+        "note": "lose 8 board feet of lumber"
+      }
+    ],
+    "new_constraints": [
+      {
+        "name": "MinTables",
+        "coefficients": [
+          0,
+          1,
+          0
+        ],
+        "sense": ">=",
+        "rhs": 1,
+        "note": "marketing demands at least one table"
+      }
+    ]
+  }
+}

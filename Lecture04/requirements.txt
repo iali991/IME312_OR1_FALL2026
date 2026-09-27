@@ -1,0 +1,6 @@
+numpy
+scipy>=1.9
+pandas
+matplotlib
+reportlab
+ipywidgets>=8

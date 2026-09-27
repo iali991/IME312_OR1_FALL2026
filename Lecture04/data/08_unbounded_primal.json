@@ -1,0 +1,36 @@
+{
+  "name": "Unbounded Primal / Infeasible Dual",
+  "source": "Completes the duality status table (slides 50-54)",
+  "description": "max x1 + x2 subject to x1 - x2 <= 1: the objective can grow forever along x1 = x2, so the dual must be infeasible.",
+  "sense": "max",
+  "objective_name": "Objective",
+  "objective": [
+    1,
+    1
+  ],
+  "variables": [
+    {
+      "name": "x1",
+      "description": "variable 1",
+      "sign": ">=0"
+    },
+    {
+      "name": "x2",
+      "description": "variable 2",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Con1",
+      "coefficients": [
+        1,
+        -1
+      ],
+      "sense": "<=",
+      "rhs": 1,
+      "description": ""
+    }
+  ],
+  "scenarios": {}
+}

@@ -1,0 +1,7 @@
+row,type,T,C,sense,rhs
+objective,max,7,5,,
+Carpentry,constraint,3,4,<=,2400
+Painting,constraint,2,1,<=,1000
+MaxChairs,constraint,0,1,<=,450
+MinTables,constraint,1,0,>=,100
+sign,bounds,>=0,>=0,,

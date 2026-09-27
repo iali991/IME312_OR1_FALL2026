@@ -1,0 +1,46 @@
+{
+  "name": "Infeasible Primal / Unbounded Dual",
+  "source": "Lecture slide 56",
+  "description": "Same constraints with x >= 0. The primal is infeasible and the dual (max y1 + y2, y1 - y2 <= 0 and <= 1) is unbounded along y1 = y2.",
+  "sense": "min",
+  "objective_name": "Objective",
+  "objective": [
+    1,
+    0
+  ],
+  "variables": [
+    {
+      "name": "x1",
+      "description": "variable 1",
+      "sign": ">=0"
+    },
+    {
+      "name": "x2",
+      "description": "variable 2",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Con1",
+      "coefficients": [
+        1,
+        1
+      ],
+      "sense": ">=",
+      "rhs": 1,
+      "description": ""
+    },
+    {
+      "name": "Con2",
+      "coefficients": [
+        -1,
+        -1
+      ],
+      "sense": ">=",
+      "rhs": 1,
+      "description": ""
+    }
+  ],
+  "scenarios": {}
+}

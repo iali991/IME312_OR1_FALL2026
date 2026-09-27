@@ -1,0 +1,61 @@
+{
+  "name": "Cover Slide Example",
+  "source": "Lecture slide 1 (iso-value objective lines)",
+  "description": "The LP pictured on the title slide: maximize 5x1 + 3x2 subject to two resource constraints. Its optimal vertex is (10, 20).",
+  "sense": "max",
+  "objective_name": "Objective value",
+  "objective": [
+    5,
+    3
+  ],
+  "variables": [
+    {
+      "name": "x1",
+      "description": "decision variable 1",
+      "sign": ">=0"
+    },
+    {
+      "name": "x2",
+      "description": "decision variable 2",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "R1",
+      "coefficients": [
+        2,
+        1
+      ],
+      "sense": "<=",
+      "rhs": 40,
+      "description": "resource 1"
+    },
+    {
+      "name": "R2",
+      "coefficients": [
+        1,
+        2
+      ],
+      "sense": "<=",
+      "rhs": 50,
+      "description": "resource 2"
+    }
+  ],
+  "scenarios": {
+    "ofc": [
+      {
+        "variable": "x1",
+        "value": 7,
+        "note": "steeper objective"
+      }
+    ],
+    "rhs": [
+      {
+        "constraint": "R1",
+        "value": 50,
+        "note": "more of resource 1"
+      }
+    ]
+  }
+}

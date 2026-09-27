@@ -1,0 +1,103 @@
+{
+  "name": "Tables and Chairs",
+  "source": "Lecture slides 6-19 (graphical sensitivity analysis)",
+  "description": "A shop produces tables (T) and chairs (C). Maximize profit subject to carpentry and painting hours, a market limit on chairs, and a minimum number of tables.",
+  "sense": "max",
+  "objective_name": "Profit ($)",
+  "objective": [
+    7,
+    5
+  ],
+  "variables": [
+    {
+      "name": "T",
+      "description": "number of tables produced",
+      "sign": ">=0"
+    },
+    {
+      "name": "C",
+      "description": "number of chairs produced",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Carpentry",
+      "coefficients": [
+        3,
+        4
+      ],
+      "sense": "<=",
+      "rhs": 2400,
+      "description": "carpentry hours available"
+    },
+    {
+      "name": "Painting",
+      "coefficients": [
+        2,
+        1
+      ],
+      "sense": "<=",
+      "rhs": 1000,
+      "description": "painting hours available"
+    },
+    {
+      "name": "MaxChairs",
+      "coefficients": [
+        0,
+        1
+      ],
+      "sense": "<=",
+      "rhs": 450,
+      "description": "maximum number of chairs"
+    },
+    {
+      "name": "MinTables",
+      "coefficients": [
+        1,
+        0
+      ],
+      "sense": ">=",
+      "rhs": 100,
+      "description": "minimum number of tables"
+    }
+  ],
+  "scenarios": {
+    "ofc": [
+      {
+        "variable": "T",
+        "value": 8,
+        "note": "slide 8/10: profit per table 7 -> 8"
+      },
+      {
+        "variable": "T",
+        "value": 11,
+        "note": "slide 11: profit per table 11"
+      },
+      {
+        "variable": "T",
+        "value": 3,
+        "note": "slide 11: profit per table 3"
+      }
+    ],
+    "rhs": [
+      {
+        "constraint": "Painting",
+        "value": 1300,
+        "note": "slide 14/16: painting hours 1000 -> 1300"
+      }
+    ],
+    "new_constraints": [
+      {
+        "name": "Cut_TplusC",
+        "coefficients": [
+          1,
+          1
+        ],
+        "sense": "<=",
+        "rhs": 600,
+        "note": "dual simplex demo: combined capacity T + C <= 600"
+      }
+    ]
+  }
+}

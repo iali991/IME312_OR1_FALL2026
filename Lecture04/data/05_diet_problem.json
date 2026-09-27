@@ -1,0 +1,101 @@
+{
+  "name": "Diet Problem",
+  "source": "Lecture slides 39-47 (dual of a min problem)",
+  "description": "Meet daily requirements of calories, chocolate, sugar and fat at minimum cost using brownies, ice cream, cola and cheesecake (prices in cents).",
+  "sense": "min",
+  "objective_name": "Cost (cents)",
+  "objective": [
+    50,
+    20,
+    30,
+    80
+  ],
+  "variables": [
+    {
+      "name": "Brownie",
+      "description": "brownies eaten",
+      "sign": ">=0"
+    },
+    {
+      "name": "IceCream",
+      "description": "scoops of chocolate ice cream",
+      "sign": ">=0"
+    },
+    {
+      "name": "Cola",
+      "description": "bottles of cola",
+      "sign": ">=0"
+    },
+    {
+      "name": "Cheesecake",
+      "description": "pieces of pineapple cheesecake",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Calories",
+      "coefficients": [
+        400,
+        200,
+        150,
+        500
+      ],
+      "sense": ">=",
+      "rhs": 500,
+      "description": "calories"
+    },
+    {
+      "name": "Chocolate",
+      "coefficients": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "sense": ">=",
+      "rhs": 6,
+      "description": "ounces of chocolate"
+    },
+    {
+      "name": "Sugar",
+      "coefficients": [
+        2,
+        2,
+        4,
+        4
+      ],
+      "sense": ">=",
+      "rhs": 10,
+      "description": "ounces of sugar"
+    },
+    {
+      "name": "Fat",
+      "coefficients": [
+        2,
+        4,
+        1,
+        5
+      ],
+      "sense": ">=",
+      "rhs": 8,
+      "description": "ounces of fat"
+    }
+  ],
+  "scenarios": {
+    "ofc": [
+      {
+        "variable": "Brownie",
+        "value": 30,
+        "note": "brownie price falls to 30 cents"
+      }
+    ],
+    "rhs": [
+      {
+        "constraint": "Sugar",
+        "value": 12,
+        "note": "sugar requirement rises to 12 oz"
+      }
+    ]
+  }
+}

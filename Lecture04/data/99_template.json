@@ -1,0 +1,61 @@
+{
+  "name": "My LP (template)",
+  "source": "Copy this file, edit it, and load it in the notebook",
+  "description": "Template. sense: 'max' or 'min'. constraint sense: '<=', '>=' or '='. variable sign: '>=0', '<=0' or 'free'.",
+  "sense": "max",
+  "objective_name": "Objective",
+  "objective": [
+    1,
+    1
+  ],
+  "variables": [
+    {
+      "name": "x1",
+      "description": "describe x1",
+      "sign": ">=0"
+    },
+    {
+      "name": "x2",
+      "description": "describe x2",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Resource1",
+      "coefficients": [
+        1,
+        2
+      ],
+      "sense": "<=",
+      "rhs": 10,
+      "description": "describe it"
+    },
+    {
+      "name": "Resource2",
+      "coefficients": [
+        3,
+        1
+      ],
+      "sense": "<=",
+      "rhs": 15,
+      "description": "describe it"
+    }
+  ],
+  "scenarios": {
+    "ofc": [
+      {
+        "variable": "x1",
+        "value": 2,
+        "note": "what-if"
+      }
+    ],
+    "rhs": [
+      {
+        "constraint": "Resource1",
+        "value": 12,
+        "note": "what-if"
+      }
+    ]
+  }
+}

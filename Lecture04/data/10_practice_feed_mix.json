@@ -1,0 +1,64 @@
+{
+  "name": "Practice: Feed Mix (min)",
+  "source": "Practice problem",
+  "description": "A farmer blends corn (x1) and soybean meal (x2), in kg, to meet protein and fiber requirements at minimum cost. Solve graphically, then interpret the dual prices of protein and fiber.",
+  "sense": "min",
+  "objective_name": "Cost ($)",
+  "objective": [
+    0.3,
+    0.9
+  ],
+  "variables": [
+    {
+      "name": "Corn",
+      "description": "kg of corn",
+      "sign": ">=0"
+    },
+    {
+      "name": "Soy",
+      "description": "kg of soybean meal",
+      "sign": ">=0"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Total",
+      "coefficients": [
+        1,
+        1
+      ],
+      "sense": ">=",
+      "rhs": 800,
+      "description": "kg of feed needed"
+    },
+    {
+      "name": "Protein",
+      "coefficients": [
+        0.21,
+        -0.3
+      ],
+      "sense": "<=",
+      "rhs": 0,
+      "description": "protein share at least 30% (rearranged)"
+    },
+    {
+      "name": "Fiber",
+      "coefficients": [
+        0.03,
+        -0.01
+      ],
+      "sense": ">=",
+      "rhs": 0,
+      "description": "fiber share at most 5% (rearranged)"
+    }
+  ],
+  "scenarios": {
+    "rhs": [
+      {
+        "constraint": "Total",
+        "value": 1000,
+        "note": "feed requirement rises to 1000 kg"
+      }
+    ]
+  }
+}
